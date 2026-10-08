@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#08080a">
+  <link rel="manifest" href="/manifest.webmanifest"><link rel="icon" href="/favicon.png">
+  <link rel="stylesheet" href="/assets/css/site.css"><link rel="stylesheet" href="/assets/css/app.css">
+  <title>My challenge accounts — TradeLab</title>
+</head>
+<body>
+  <div class="draft-banner">Challenge accounts · simulated balances only · checkout status shown before purchase</div>
+  <header class="app-top">
+    <div class="wrap app-nav">
+      <a class="brand" href="/"><span class="brand-mark" aria-hidden="true"></span><span class="brand-name">TRADELAB</span></a>
+      <div class="app-tools"><a class="btn btn-small" href="/app.html">Browse instruments</a><span class="status-pill" id="account-user">Loading account…</span><button class="btn btn-small" id="accounts-logout" type="button">Sign out</button></div>
+    </div>
+  </header>
+  <main class="wrap accounts-page">
+    <div class="account-page-head">
+      <div><div class="section-kicker">Trader dashboard</div><h1>My challenge accounts</h1><p class="section-intro">Track your challenge accounts here. Open a market chart from the instrument browser when you are ready to review markets.</p></div>
+      <a class="btn btn-primary" href="/app.html">Browse instruments <span aria-hidden="true">→</span></a>
+    </div>
+    <div class="notice accounts-notice" id="accounts-message" role="status" aria-live="polite">Loading your account details securely…</div>
+    <section class="dashboard-section hidden" id="owned-section" aria-labelledby="owned-heading">
+      <div class="dashboard-section-head"><h2 id="owned-heading">Active and past challenges</h2><span class="status-pill" id="owned-count">0 accounts</span></div>
+      <div class="owned-account-grid" id="owned-accounts"></div>
+    </section>
+    <section class="accounts-empty hidden" id="empty-section" aria-labelledby="empty-heading">
+      <div class="empty-icon" aria-hidden="true">↗</div><div><h2 id="empty-heading">No challenge accounts yet</h2><p id="empty-copy">Choose a challenge below when checkout is available. You can browse instrument names and view charts before purchase; trading remains locked until an eligible challenge is active.</p><a class="btn btn-small" href="/app.html">Browse instruments</a></div>
+    </section>
+    <section class="dashboard-section" id="catalogue-section" aria-labelledby="catalogue-heading">
+      <div class="dashboard-section-head"><div><div class="section-kicker">Challenge catalogue</div><h2 id="catalogue-heading">Choose a virtual balance</h2></div><span class="status-pill" id="catalogue-status">Checkout disabled</span></div>
+      <p class="section-intro" id="catalogue-copy">Approved fees are displayed. Checkout stays disabled until server-side order settlement, provider setup and legal review are complete.</p>
+      <div class="challenge-grid" id="challenge-catalogue" aria-live="polite"></div>
+    </section>
+    <div class="notice" style="margin-top:22px">All balances are virtual. Reaching a simulated target does not guarantee acceptance or a company-funded reward. See the <a href="/legal/risk-disclaimer.html">Risk Disclaimer</a> and draft <a href="/legal/terms.html">Terms</a>.</div>
+  </main>
+  <footer class="footer"><div class="wrap footer-bottom"><span>© 2026 TradeLab</span><span><a href="/legal/payment-policy.html">Payment Policy</a> · <a href="/legal/refund-policy.html">Refund Policy</a></span></div></footer>
+  <script type="module" src="/assets/js/accounts.js"></script>
+</body>
+</html>

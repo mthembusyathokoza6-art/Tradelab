@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#08080a">
+  <link rel="manifest" href="/manifest.webmanifest"><link rel="icon" href="/favicon.png">
+  <link rel="stylesheet" href="/assets/css/site.css">
+  <title>Create account — TradeLab</title>
+</head>
+<body>
+  <div class="draft-banner">Account creation requires secure backend and approved legal-version setup</div>
+  <header class="site-header"><div class="wrap nav"><a class="brand" href="/"><span class="brand-mark" aria-hidden="true"></span><span class="brand-name">TRADELAB</span></a><a class="btn btn-small" href="/">Back to home</a></div></header>
+  <main class="form-wrap">
+    <div class="eyebrow"><span class="live-dot"></span> Create your account</div>
+    <h1>Start with a clear plan.</h1>
+    <p class="form-help">Complete the fields below. Registration and sign-in do not require email verification under the current product setting; verify your email and complete required account checks before requesting any payout. Account creation still requires the secure API, database migration, and approved legal versions.</p>
+    <form id="register-form" method="post" action="/api/auth/register" novalidate>
+      <div class="field"><label for="firstName">First name</label><input id="firstName" name="firstName" autocomplete="given-name" required maxlength="80"></div>
+      <div class="field"><label for="lastName">Last name</label><input id="lastName" name="lastName" autocomplete="family-name" required maxlength="80"></div>
+      <div class="field"><label for="email">Email address</label><input id="email" name="email" type="email" autocomplete="email" required maxlength="254"></div>
+      <div class="field"><label for="phone">Phone number</label><input id="phone" name="phone" type="tel" autocomplete="tel" required maxlength="40" placeholder="+27 …"></div>
+      <div class="field"><label for="country">Country</label><input id="country" name="country" autocomplete="country-name" required maxlength="100" value="South Africa"></div>
+      <div class="field"><label for="dateOfBirth">Date of birth</label><input id="dateOfBirth" name="dateOfBirth" type="date" autocomplete="bday" required></div>
+      <div class="field"><label for="password">Password</label><input id="password" name="password" type="password" autocomplete="new-password" required minlength="12" maxlength="128" aria-describedby="password-hint"><small id="password-hint" class="form-help">Use at least 12 characters. Avoid a password used on another service.</small></div>
+      <div class="field"><label for="confirmPassword">Confirm password</label><input id="confirmPassword" name="confirmPassword" type="password" autocomplete="new-password" required minlength="12" maxlength="128"></div>
+      <div class="check-list">
+        <label class="check-item"><input name="termsAccepted" type="checkbox" required><span>I have read the draft <a href="/legal/terms.html" target="_blank" rel="noopener">Terms &amp; Conditions</a>. I understand that it must be finalised before launch.</span></label>
+        <label class="check-item"><input name="riskAccepted" type="checkbox" required><span>I have read the <a href="/legal/risk-disclaimer.html" target="_blank" rel="noopener">Risk Disclaimer</a> and understand the platform uses simulated trading.</span></label>
+        <label class="check-item"><input name="privacyAcknowledged" type="checkbox" required><span>I have read the <a href="/legal/privacy-policy.html" target="_blank" rel="noopener">Privacy Notice draft</a>.</span></label>
+      </div>
+      <button class="btn btn-primary" type="submit">Create account</button>
+      <div class="form-message" id="form-message" role="status" aria-live="polite"></div>
+    </form>
+    <div class="form-switch">Already registered? <a href="/login.html">Sign in</a></div>
+    <div class="notice" style="margin-top:20px">The privacy page is a recommended draft and still needs owner confirmation and legal review. No form data is stored until account creation is enabled.</div>
+  </main>
+  <footer class="footer"><div class="wrap footer-bottom"><span>© 2026 TradeLab</span><span><a href="/legal/terms.html">Terms</a> · <a href="/legal/payment-policy.html">Payments</a> · <a href="/legal/refund-policy.html">Refunds</a></span></div></footer>
+  <script type="module" src="/assets/js/auth.js"></script>
+</body>
+</html>

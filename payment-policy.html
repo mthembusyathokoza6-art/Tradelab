@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#08080a"><link rel="stylesheet" href="/assets/css/site.css"><link rel="icon" href="/favicon.png"><title>Payment Policy — TradeLab</title></head>
+<body>
+  <div class="draft-banner">DRAFT · Checkout disabled · Requires legal, finance and provider review</div>
+  <header class="site-header"><div class="wrap nav"><a class="brand" href="/"><span class="brand-mark" aria-hidden="true"></span><span class="brand-name">TRADELAB</span></a><a class="btn btn-small" href="/">Home</a></div></header>
+  <main class="wrap">
+    <div class="page-title"><div class="eyebrow">Payments</div><h1>Payment Policy</h1><p class="form-help">Draft prepared 8 October 2026 · Proposed effective date: <strong>[TO BE SET AFTER REVIEW]</strong></p></div>
+    <article class="legal-body">
+      <div class="legal-draft"><strong>DRAFT — NO LIVE PAYMENTS ARE ENABLED.</strong> Base ZAR tier fees are approved, but supported payment currencies, tax treatment, refunds, chargebacks, timing, operator details and applicable law are not final. Qualified legal, finance and provider review is required before publishing or accepting an order.</div>
+      <h2>1. What a payment is for</h2>
+      <p>A payment, if enabled, will be for access to a simulated trading challenge or educational/performance-assessment service. It is not a trading deposit, investment, exchange balance, brokerage funding or purchase of virtual money. Challenge balances have no cash value.</p>
+      <h2>2. Fees and order confirmation</h2>
+      <p>The approved access fees for the R50,000, R100,000 and R200,000 virtual-balance tiers are R500, R1,000 and R2,500, respectively, in ZAR. These approved base prices are not currently available for payment. Before a live checkout is enabled, the operator must confirm and display the final amount due, including the treatment of taxes, payment-currency conversion, provider charges and any other material cost.</p>
+      <p>Checkout is not active on the current public site. Do not send money based on sample or draft content.</p>
+      <h2>3. Hosted payment flow</h2>
+      <p>The proposed payment integration is NowPayments. For each order, the server will create a hosted invoice or payment link and associate it with an internal order. Provider credentials stay on the server; the browser must not call the provider with a private key or create an invoice directly.</p>
+      <p>An order is marked paid only after the server validates the provider’s webhook signature, checks the expected order and amount/currency, and processes the notification idempotently. A screenshot, email, browser redirect, transaction hash or client-side status alone is not proof of payment. The final supported currencies, network confirmations, underpayments/overpayments, payment expiry and manual-review process are <strong>[TO BE CONFIRMED]</strong>.</p>
+      <h2>4. Receipts, disputes and refunds</h2>
+      <p>Receipt/invoice format, business tax details, transaction fees, failed or pending payments, chargebacks, disputes and support response times must be completed by the operator. See the separate draft <a href="/legal/refund-policy.html">Refund Policy</a> for the unresolved refund conditions. No inconsistent or blanket “no refunds” claim is approved by this draft.</p>
+      <h2>5. Referral credit</h2>
+      <p>The proposed referral reward is 5% of the net access fee actually received after payment is confirmed. It is recorded separately from the payment and challenge account. Subject to final terms, it may be withdrawn or converted to challenge credit. The net-fee calculation, treatment of taxes and provider charges, withdrawal method, minimum amount, review/KYC, timing, reversals and expiry are <strong>[TO BE CONFIRMED BEFORE ACTIVATION]</strong>.</p>
+      <h2>6. Support</h2>
+      <p>For a payment question, contact <strong>[SUPPORT EMAIL]</strong> and include the internal order reference. Do not send passwords, full card details, secret keys or identity documents by ordinary email. Operator: <strong>[FULL LEGAL ENTITY NAME AND ADDRESS]</strong>.</p>
+      <div class="legal-draft">Publication checklist: confirm tax treatment and displayed conversion/provider charges; verify NowPayments permits the described business model; set supported asset/network rules; test signed webhooks and duplicate notifications; define order, refund, failed-payment and support procedures; confirm referral accounting; publish approved legal entity details.</div>
+    </article>
+  </main>
+  <footer class="footer"><div class="wrap footer-links"><a href="/legal/terms.html">Terms &amp; Conditions</a><a href="/legal/risk-disclaimer.html">Risk Disclaimer</a><a href="/legal/refund-policy.html">Refund Policy</a><a href="/legal/privacy-policy.html">Privacy Policy draft</a></div></footer>
+</body>
+</html>

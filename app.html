@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#08080a">
+  <link rel="manifest" href="/manifest.webmanifest"><link rel="icon" href="/favicon.png">
+  <link rel="stylesheet" href="/assets/css/site.css">
+  <title>Instruments — TradeLab</title>
+</head>
+<body>
+  <div class="app-top">
+    <div class="wrap app-nav">
+      <a class="brand" href="/"><span class="brand-mark" aria-hidden="true"></span><span class="brand-name">TRADELAB</span></a>
+      <div class="app-tools"><span class="status-pill" id="data-status">Select an instrument</span><a class="btn btn-small" href="/accounts.html">My challenge accounts</a><a class="btn btn-small" id="auth-link" href="/login.html">Sign in</a><button class="btn btn-small hidden" id="terminal-logout" type="button">Sign out</button></div>
+    </div>
+  </div>
+  <main class="wrap app-layout">
+    <aside class="panel sidebar">
+      <div class="panel-label">Challenge account</div>
+      <div class="account-empty"><strong>No active challenge selected</strong><p>Charts are view-only. Trading is available only inside an eligible purchased challenge; free demo trading is not offered.</p><a class="btn btn-small" href="/accounts.html">View my challenge accounts</a></div>
+      <div class="instrument-list-heading">
+        <div class="panel-label">Instruments <span id="instrument-count"></span></div>
+        <div class="form-help instrument-source" id="instrument-source">Loading instrument list…</div>
+      </div>
+      <label class="instrument-search-label" for="instrument-search">Find an instrument</label>
+      <input id="instrument-search" class="instrument-search" type="search" placeholder="Search symbol or name" autocomplete="off">
+      <div class="instrument-list" id="instrument-list" aria-label="Available instruments"></div>
+      <p class="form-help" style="font-size:10px;margin:14px 3px 0">Market data is subject to provider plan, licensing and freshness limits.</p>
+    </aside>
+
+    <section class="main-panel" aria-label="Market charts">
+      <div class="panel chart-select-prompt" id="chart-select-prompt">
+        <div class="eyebrow"><span class="live-dot"></span> View-only market browser</div>
+        <h1>Select an instrument</h1>
+        <p>Choose a market from the instrument list to open its chart. No chart is loaded until you select an instrument.</p>
+        <div class="prompt-hint"><span aria-hidden="true">←</span> Start with the instrument list</div>
+      </div>
+
+      <div class="panel chart-panel hidden" id="chart-panel">
+        <div class="chart-toolbar">
+          <div class="instrument-heading"><button class="btn btn-small back-instruments" id="back-to-instruments" type="button">← Instruments</button><div><strong id="current-symbol">—</strong><small id="current-name">Select a market</small></div></div>
+          <div class="timeframes" role="group" aria-label="Chart timeframe">
+            <button class="timeframe" type="button" data-interval="1m">1m</button>
+            <button class="timeframe" type="button" data-interval="5m">5m</button>
+            <button class="timeframe" type="button" data-interval="15m">15m</button>
+            <button class="timeframe" type="button" data-interval="30m">30m</button>
+            <button class="timeframe active" type="button" data-interval="1h">1h</button>
+            <button class="timeframe" type="button" data-interval="4h">4h</button>
+            <button class="timeframe" type="button" data-interval="1d">1D</button>
+          </div>
+          <div class="chart-actions"><button class="icon-btn" id="maximize-chart" type="button" aria-label="Maximize chart" title="Maximize chart" aria-pressed="false">⛶</button></div>
+        </div>
+        <div class="chart-stage has-preview" id="chart-stage">
+          <div class="chart-watermark" id="chart-watermark">ILLUSTRATIVE SAMPLE · NOT LIVE</div>
+          <canvas id="chart-canvas" aria-label="Illustrative candlestick chart, not live market data"></canvas>
+          <div class="chart-placeholder" id="chart-placeholder">Loading chart…</div>
+        </div>
+        <div class="chart-foot" style="padding:10px 14px"><span id="chart-source">Sample candles · not live market data</span><span id="chart-timeframe-label">1h</span></div>
+        <div class="order-row">
+          <div class="disabled-note">Trading is locked · no free demo trading</div>
+          <div class="order-controls"><button class="btn btn-buy" type="button" disabled>Buy</button><button class="btn btn-sell" type="button" disabled>Sell</button></div>
+        </div>
+      </div>
+      <div class="notice" style="margin-top:14px">Charts may use market-data prices. They are not broker quotes or a guarantee of execution. Simulated performance does not predict future results.</div>
+    </section>
+  </main>
+  <script type="module" src="/assets/js/terminal.js"></script>
+</body>
+</html>

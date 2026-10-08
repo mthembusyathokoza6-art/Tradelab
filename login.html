@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#08080a">
+  <link rel="manifest" href="/manifest.webmanifest"><link rel="icon" href="/favicon.png">
+  <link rel="stylesheet" href="/assets/css/site.css">
+  <title>Sign in — TradeLab</title>
+</head>
+<body>
+  <div class="draft-banner">Secure sign-in requires server configuration</div>
+  <header class="site-header"><div class="wrap nav"><a class="brand" href="/"><span class="brand-mark" aria-hidden="true"></span><span class="brand-name">TRADELAB</span></a><a class="btn btn-small" href="/">Back to home</a></div></header>
+  <main class="form-wrap">
+    <div class="eyebrow"><span class="live-dot"></span> Trader portal</div>
+    <h1>Welcome back.</h1>
+    <p class="form-help">Sign in with your TradeLab account. Authentication will use a secure, HttpOnly server-managed session; account and trading data will not be saved in browser storage.</p>
+    <form id="login-form" method="post" action="/api/auth/login" novalidate>
+      <div class="field"><label for="email">Email address</label><input id="email" name="email" type="email" autocomplete="username" required maxlength="254" placeholder="you@example.com"></div>
+      <div class="field"><label for="password">Password</label><input id="password" name="password" type="password" autocomplete="current-password" required minlength="12" maxlength="128" placeholder="Your password"></div>
+      <button class="btn btn-primary" type="submit">Sign in</button>
+      <button class="btn btn-small" id="resend-verification" type="button" style="width:100%;margin-top:10px">Resend verification email</button>
+      <div class="form-message" id="form-message" role="status" aria-live="polite"></div>
+    </form>
+    <div class="form-switch">New to TradeLab? <a href="/register.html">Create an account</a></div>
+    <div class="notice" style="margin-top:20px">Email verification is not a sign-in gate under the current product setting. It, along with required account checks, will be required before payout; there is no manual account-approval step. Signup remains unavailable until the migration, server configuration, and approved legal versions are in place.</div>
+  </main>
+  <footer class="footer"><div class="wrap footer-bottom"><span>© 2026 TradeLab</span><span><a href="/legal/terms.html">Terms</a> · <a href="/legal/risk-disclaimer.html">Risk disclosure</a> · <a href="/legal/privacy-policy.html">Privacy</a></span></div></footer>
+  <script type="module" src="/assets/js/auth.js"></script>
+</body>
+</html>
